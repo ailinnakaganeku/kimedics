@@ -25,6 +25,14 @@ export const NameText = styled('div')(({ theme }) => ({
   maxWidth: '280px'
 }));
 
+export const Text = styled('div')(({ theme }) => ({
+  marginLeft: theme.spacing(1),
+  marginRight: theme.spacing(1),
+  maxWidth: '280px',
+  color: theme.palette.secondary.main,
+  fontWeight: 500
+}));
+
 export const TotalBedsText = styled('div')(({ theme }) => ({
   color: theme.palette.secondary.main,
   marginLeft: 'auto',
