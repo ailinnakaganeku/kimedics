@@ -8,47 +8,55 @@ import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlin
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 
 export const sideBarItems = [
-  { name: 'Dashboard', icon: InsertChartOutlinedSharpIcon, to: '/' },
+  { id: 1, name: 'Dashboard', icon: InsertChartOutlinedSharpIcon, to: '/' },
   {
-    name: 'Providers', icon: BadgeOutlinedIcon, to: '/providers/dashboard', children: [
+    id: 2, name: 'Providers', icon: BadgeOutlinedIcon, to: '/providers/dashboard', children: [
       {
+        id: 3,
         name: 'Dashboard',
         to: '/providers/dashboards'
       },
       {
+        id: 4,
         name: 'Providers',
         to: '/providers/providers'
       },
       {
+        id: 5,
         name: 'My Tasks',
         to: '/providers/mytasks'
       },
       {
+        id: 6,
         name: 'All Tasks',
         to: '/providers/alltasks'
       },
       {
+        id: 7,
         name: 'Roster',
         to: '/providers/roster'
       },
       {
+        id: 8,
         name: 'Priviliges',
         to: 'providers/priviliges'
       },
       {
+        id: 9,
         name: 'Credentialing',
         to: '/providers/credentialing'
-      },
+      }, ,
       {
+        id: 10,
         name: 'State Laws',
         to: '/providers/statelaws'
       },
     ],
   },
-  { name: 'Practices', icon: RoomOutlinedIcon, to: '/practices' },
-  { name: 'Jobs', icon: BusinessCenterOutlinedIcon, to: '/jobs' },
-  { name: 'Schedules', icon: CalendarTodayOutlinedIcon, to: '/schedules' },
-  { name: 'Time & Invoices', icon: MoreTimeOutlinedIcon, to: '/timeandinvoices' },
-  { name: 'Time & Pay', icon: MonetizationOnOutlinedIcon, to: '/timeandpay' },
-  { name: 'Messages', icon: ChatBubbleOutlineOutlinedIcon, to: '/messages' },
+  { id: 11, name: 'Practices', icon: RoomOutlinedIcon, to: '/practices' },
+  { id: 12, name: 'Jobs', icon: BusinessCenterOutlinedIcon, to: '/jobs' },
+  { id: 13, name: 'Schedules', icon: CalendarTodayOutlinedIcon, to: '/schedules' },
+  { id: 14, name: 'Time & Invoices', icon: MoreTimeOutlinedIcon, to: '/timeandinvoices' },
+  { id: 15, name: 'Time & Pay', icon: MonetizationOnOutlinedIcon, to: '/timeandpay' },
+  { id: 16, name: 'Messages', icon: ChatBubbleOutlineOutlinedIcon, to: '/messages' },
 ];

@@ -126,5 +126,4 @@ export const SidebarDrawer = styled(Drawer)(({ theme, isCollapsed }) => ({
 export const SidebarLink = styled(Link)(({ active, theme }) => ({
     textDecoration: 'none',
     color: active ? theme.palette.secondary.main : theme.palette.primary.white,
-    fontWeight: active ? 'bold' : 'normal',
 }));

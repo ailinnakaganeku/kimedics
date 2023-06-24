@@ -24,11 +24,10 @@ const Sidebar = ({ sideBarItems }) => {
                             <LogoImage alt='Kimedics Logo' isCollapsed={isSidebarCollapsed} />
                         </SidebarImage>
                     </SidebarListItem>
-                    {sideBarItems?.map((item, index) => (
+                    {sideBarItems?.map((item) => (
                         <>
-                            <SidebarLink to={item.to} active={location.pathname === item.to}>
+                            <SidebarLink to={item.to} active={location.pathname === item.to} key={item.id}>
                                 <SideBarItem
-                                    key={index}
                                     name={item.name}
                                     icon={item.icon}
                                     onClick={handleItemClick}
