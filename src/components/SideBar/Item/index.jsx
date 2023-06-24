@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { List } from '@mui/material';
-import { SidebarListItem, SidebarListItemIcon, SidebarListItemSubtext, SidebarListItemText, SidebarListSubitem } from "../styles";
+import { SidebarListItem, SidebarListItemIcon, SidebarListItemSubtext, SidebarListItemText, SidebarListSubitem } from '../styles';
 
 const SideBarItem = ({ name, icon: Icon, onClick, selected, isCollapsed, children }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -24,7 +24,7 @@ const SideBarItem = ({ name, icon: Icon, onClick, selected, isCollapsed, childre
                 {!isCollapsed && <SidebarListItemText primary={name} />}
             </SidebarListItem>
             {children && isExpanded && !isCollapsed && (
-                <List component="div">
+                <List component='div'>
                     {children.map((child, index) => (
                         <SidebarListSubitem key={index} isCollapsed={isCollapsed}>
                             <SidebarListItemSubtext primary={child.name} />

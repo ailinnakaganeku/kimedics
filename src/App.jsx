@@ -1,7 +1,9 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { styled } from '@mui/system';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { sideBarItems } from './utils/mock';
 import Sidebar from './components/SideBar';
+import PageComponente from './pages/PageComponent';
 
 const AppContainer = styled('div')({
   display: 'flex',
@@ -27,9 +29,16 @@ const theme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer>
-        <Sidebar sideBarItems={sideBarItems} />
-      </AppContainer>
+      <BrowserRouter>
+        <AppContainer>
+          <Sidebar sideBarItems={sideBarItems} />
+          <Routes>
+            {sideBarItems?.map((item, index) => (
+              <Route key={index} path={item.to} element={<PageComponente name={item.name} />} />
+            ))}
+          </Routes>
+        </AppContainer>
+      </BrowserRouter>
     </ThemeProvider>
   );
 };

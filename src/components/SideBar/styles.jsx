@@ -1,5 +1,6 @@
 import { styled } from '@mui/system';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 const collapsedWidth = 100;
@@ -120,4 +121,10 @@ export const SidebarDrawer = styled(Drawer)(({ theme, isCollapsed }) => ({
         marginLeft: isCollapsed ? collapsedWidth : 0,
         visibility: isCollapsed ? 'visible' : 'hidden',
     },
+}));
+
+export const SidebarLink = styled(Link)(({ active, theme }) => ({
+    textDecoration: 'none',
+    color: active ? theme.palette.secondary.main : theme.palette.primary.white,
+    fontWeight: active ? 'bold' : 'normal',
 }));
