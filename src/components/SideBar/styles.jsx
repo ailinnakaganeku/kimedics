@@ -1,5 +1,6 @@
 import { styled } from '@mui/system';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -130,4 +131,29 @@ export const SidebarDrawer = styled(Drawer)(({ theme, isCollapsed }) => ({
 export const SidebarLink = styled(Link)(({ active, theme }) => ({
     textDecoration: 'none',
     color: active ? theme.palette.secondary.main : theme.palette.primary.white,
+}));
+
+export const CloseButton = styled(IconButton)(({ theme }) => ({
+    position: 'absolute',
+    top: '8px',
+    right: 0,
+    backgroundColor: theme.palette.secondary.main,
+    cursor: 'pointer',
+    zIndex: '9999',
+    borderRadius: '100% 0px 0px 100%',
+    '& .MuiSvgIcon-root': {
+        color: theme.palette.primary.white,
+    },
+    '&:hover': {
+        backgroundColor: theme.palette.secondary.main,
+    },
+    '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: theme.palette.secondary.main,
+        zIndex: -1,
+    },
 }));
