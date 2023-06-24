@@ -8,6 +8,9 @@ export
                 white: '#fff'
             },
             secondary: {
+                main: '#1aa39a'
+            },
+            tertiary: {
                 main: '#3bd4ae'
             }
         },

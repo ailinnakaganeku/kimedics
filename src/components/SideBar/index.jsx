@@ -38,6 +38,7 @@ const Sidebar = ({ sideBarItems }) => {
                                 selected={item === selectedItem}
                                 isCollapsed={isSidebarCollapsed}
                                 children={item.children}
+                                active={location.pathname === item.to}
                             />
                         </SidebarLink>
                     ))}

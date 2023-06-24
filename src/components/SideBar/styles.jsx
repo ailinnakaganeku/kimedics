@@ -67,11 +67,12 @@ export const SidebarListSubitem = styled(ListItem)(({ theme, isCollapsed }) => (
     paddingTop: 'unset'
 }));
 
-export const SidebarListItemIcon = styled(ListItemIcon)(({ theme, isCollapsed }) => ({
+export const SidebarListItemIcon = styled(ListItemIcon)(({ theme, isCollapsed, active }) => ({
     color: 'inherit',
     minWidth: !isCollapsed ? 'unset' : '56px',
     marginRight: !isCollapsed && theme.spacing(1),
-    color: theme.palette.secondary.main
+    color: theme.palette.primary.white,
+    color: active ? theme.palette.secondary.main : theme.palette.primary.white,
 }));
 
 export const SidebarListItemText = styled(ListItemText)(({ theme }) => ({

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { List } from '@mui/material';
 import { SidebarLink, SidebarListItem, SidebarListItemIcon, SidebarListItemSubtext, SidebarListItemText, SidebarListSubitem } from '../styles';
 
-const SideBarItem = ({ name, icon: Icon, onClick, selected, isCollapsed, children }) => {
+const SideBarItem = ({ name, icon: Icon, onClick, selected, isCollapsed, children, active }) => {
     const location = useLocation();
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -20,7 +20,7 @@ const SideBarItem = ({ name, icon: Icon, onClick, selected, isCollapsed, childre
     return (
         <>
             <SidebarListItem button selected={selected} isCollapsed={isCollapsed} onClick={handleItemClick}>
-                <SidebarListItemIcon isCollapsed={isCollapsed}>
+                <SidebarListItemIcon isCollapsed={isCollapsed} active={active}>
                     <Icon />
                 </SidebarListItemIcon>
                 {!isCollapsed && <SidebarListItemText primary={name} />}
