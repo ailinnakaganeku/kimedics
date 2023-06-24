@@ -11,7 +11,8 @@ export
                 main: '#1aa39a'
             },
             tertiary: {
-                main: '#3bd4ae'
+                main: '#3bd4ae',
+                hover: '#009ADE'
             }
         },
         typography: {

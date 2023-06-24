@@ -72,7 +72,7 @@ export const SidebarListItemIcon = styled(ListItemIcon)(({ theme, isCollapsed, a
     minWidth: !isCollapsed ? 'unset' : '56px',
     marginRight: !isCollapsed && theme.spacing(1),
     color: theme.palette.primary.white,
-    color: active ? theme.palette.secondary.main : theme.palette.primary.white,
+    color: active ? theme.palette.tertiary.main : theme.palette.primary.white,
 }));
 
 export const SidebarListItemText = styled(ListItemText)(({ theme }) => ({
@@ -131,7 +131,7 @@ export const SidebarDrawer = styled(Drawer)(({ theme, isCollapsed }) => ({
 
 export const SidebarLink = styled(Link)(({ active, theme }) => ({
     textDecoration: 'none',
-    color: active ? theme.palette.secondary.main : theme.palette.primary.white,
+    color: active ? theme.palette.tertiary.main : theme.palette.primary.white,
 }));
 
 export const CloseButton = styled(IconButton)(({ theme }) => ({
