@@ -40,7 +40,8 @@ export const SidebarListItem = styled(ListItem)(({ theme, isCollapsed }) => ({
     alignItems: 'center',
     justifyContent: isCollapsed ? 'center' : 'flex-start',
     '& .MuiSvgIcon-root': {
-        fontSize: !isCollapsed ? '18px' : '20px'
+        fontSize: !isCollapsed ? '18px' : '20px',
+        paddingTop: isCollapsed && theme.spacing(1),
     },
     '& + &': {
         marginTop: theme.spacing(1),
@@ -108,7 +109,10 @@ export const LogoImage = styled('img')(({ isCollapsed }) => ({
     objectFit: 'contain',
     content: `url(${isCollapsed ? '/assets/images/ft-logo.svg' : '/assets/images/ft-logo-kimedics.svg'})`,
     paddingTop: '0px',
-    paddingBottom: '0px'
+    paddingBottom: '0px',
+    '& .MuiListItem-root': {
+        paddingBottom: '0px'
+    }
 }));
 
 export const SidebarDrawer = styled(Drawer)(({ theme, isCollapsed }) => ({
