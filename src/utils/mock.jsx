@@ -14,7 +14,7 @@ export const sideBarItems = [
       {
         id: 3,
         name: 'Dashboard',
-        to: '/providers/dashboards'
+        to: '/providers/dashboard'
       },
       {
         id: 4,

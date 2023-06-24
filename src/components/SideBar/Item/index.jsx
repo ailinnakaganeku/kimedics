@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { List } from '@mui/material';
-import { SidebarListItem, SidebarListItemIcon, SidebarListItemSubtext, SidebarListItemText, SidebarListSubitem } from '../styles';
+import { SidebarLink, SidebarListItem, SidebarListItemIcon, SidebarListItemSubtext, SidebarListItemText, SidebarListSubitem } from '../styles';
 
 const SideBarItem = ({ name, icon: Icon, onClick, selected, isCollapsed, children }) => {
+    const location = useLocation();
     const [isExpanded, setIsExpanded] = useState(false);
 
     const handleItemClick = () => {
@@ -26,9 +28,11 @@ const SideBarItem = ({ name, icon: Icon, onClick, selected, isCollapsed, childre
             {children && isExpanded && !isCollapsed && (
                 <List component='div'>
                     {children?.map((child) => (
-                        <SidebarListSubitem key={child.id} isCollapsed={isCollapsed}>
-                            <SidebarListItemSubtext primary={child.name} />
-                        </SidebarListSubitem>
+                        <SidebarLink to={child.to} active={location.pathname === child.to} key={child.id}>
+                            <SidebarListSubitem key={child.id} isCollapsed={isCollapsed}>
+                                <SidebarListItemSubtext primary={child.name} />
+                            </SidebarListSubitem>
+                        </SidebarLink>
                     ))}
                 </List>
             )}
