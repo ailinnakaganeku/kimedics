@@ -102,7 +102,7 @@ export const SidebarImage = styled('div')(({ theme, isCollapsed }) => ({
     marginBottom: theme.spacing(1.5),
 }));
 
-export const LogoImage = styled('img')(({ theme, isCollapsed }) => ({
+export const LogoImage = styled('img')(({ isCollapsed }) => ({
     width: '100%',
     height: '100%',
     objectFit: 'contain',

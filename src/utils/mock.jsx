@@ -39,7 +39,7 @@ export const sideBarItems = [
       {
         id: 8,
         name: 'Priviliges',
-        to: 'providers/priviliges'
+        to: '/providers/priviliges'
       },
       {
         id: 9,
