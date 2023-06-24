@@ -24,8 +24,7 @@ export const OptionContainer = styled('div')(({ theme }) => ({
 }));
 
 export const OptionIcon = styled('div')(({ theme }) => ({
-    marginTop: '2px',
-    marginRight: '8px',
+    marginRight: theme.spacing(1),
 }));
 
 export const StyledTextField = styled(TextField)(({ theme }) => ({
@@ -34,6 +33,7 @@ export const StyledTextField = styled(TextField)(({ theme }) => ({
         color: theme.palette.secondary.main,
         alignItems: 'center',
         fontSize: '18px',
+        marginTop: '4px'
     },
     [theme.breakpoints.down('sm')]: {
         minWidth: '100%',
