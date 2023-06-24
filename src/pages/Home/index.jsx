@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoImage from '/assets/images/ft-logo-kimedics.svg';
+import LogoImage from '/assets/images/h-logo.svg';
 import { Container, Logo } from './styles';
 
 
