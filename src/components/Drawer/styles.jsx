@@ -2,13 +2,12 @@ import { TextField } from '@mui/material';
 import { styled } from '@mui/system';
 
 export const StyledDrawer = styled('div')(({ theme }) => ({
-    paddingTop: '42px',
-    paddingRight: theme.spacing(2),
+    paddingTop: theme.spacing(4),
     display: 'flex',
     gap: theme.spacing(2),
     flexDirection: 'column',
     [theme.breakpoints.down('sm')]: {
-        padding: '20px',
+        paddingTop: theme.spacing(3),
     },
 }));
 

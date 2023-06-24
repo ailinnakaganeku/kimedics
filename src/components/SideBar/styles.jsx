@@ -9,14 +9,14 @@ const collapsedWidth = 100;
 export const SidebarContainer = styled('div')(({ theme }) => ({
     position: 'relative',
     display: 'flex',
-    width: drawerWidth,
+    width: 'auto',
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.white,
 }));
 
 export const SidebarPaper = styled(Drawer)(({ theme, isCollapsed }) => ({
     position: 'absolute',
-    width: isCollapsed ? collapsedWidth : drawerWidth,
+    width: 'auto',
     top: 0,
     left: isCollapsed ? -drawerWidth + collapsedWidth : 0,
     bottom: 0,
@@ -25,7 +25,7 @@ export const SidebarPaper = styled(Drawer)(({ theme, isCollapsed }) => ({
         boxSizing: 'border-box',
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.primary.white,
-        width: isCollapsed ? collapsedWidth : drawerWidth,
+        width: 'auto',
         overflowX: 'hidden',
     },
 }));
@@ -100,21 +100,29 @@ export const SidebarImage = styled('div')(({ theme, isCollapsed }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '180px',
-    height: isCollapsed ? theme.spacing(5) : theme.spacing(10),
+    width: 'auto',
+    height: isCollapsed ? theme.spacing(4) : theme.spacing(10),
     marginBottom: theme.spacing(1.5),
+    [theme.breakpoints.down('sm')]: {
+        height: isCollapsed ? theme.spacing(3) : theme.spacing(5),
+    },
 }));
 
-export const LogoImage = styled('img')(({ isCollapsed }) => ({
+export const LogoImage = styled('img')(({ isCollapsed, theme }) => ({
     width: '100%',
     height: '100%',
     objectFit: 'contain',
     content: `url(${isCollapsed ? '/assets/images/ft-logo.svg' : '/assets/images/ft-logo-kimedics.svg'})`,
     paddingTop: '0px',
     paddingBottom: '0px',
+    [theme.breakpoints.down('sm')]: {
+        width: 'auto',
+        height: 'auto',
+        content: `url(${isCollapsed ? '/assets/images/ft-logo-mobile.svg' : '/assets/images/ft-logo-kimedics-mobile.svg'})`,
+    },
     '& .MuiListItem-root': {
-        paddingBottom: '0px'
-    }
+        paddingBottom: '0px',
+    },
 }));
 
 export const SidebarDrawer = styled(Drawer)(({ theme, isCollapsed }) => ({
@@ -122,7 +130,7 @@ export const SidebarDrawer = styled(Drawer)(({ theme, isCollapsed }) => ({
         backgroundColor: theme.palette.primary.white,
         color: theme.palette.primary.main,
         overflowX: 'hidden',
-        width: drawerWidth + collapsedWidth * 2,
+        width: 'auto',
         transition: 'width 0.2s ease-in-out',
         marginLeft: isCollapsed ? collapsedWidth : 0,
         visibility: isCollapsed ? 'visible' : 'hidden',
@@ -156,5 +164,8 @@ export const CloseButton = styled(IconButton)(({ theme }) => ({
         bottom: 0,
         backgroundColor: theme.palette.secondary.main,
         zIndex: -1,
+    },
+    [theme.breakpoints.down('sm')]: {
+        top: '0px',
     },
 }));
