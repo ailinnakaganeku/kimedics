@@ -61,7 +61,7 @@ export const SidebarListSubitem = styled(ListItem)(({ theme, isCollapsed }) => (
         fontSize: theme.typography.subtitle1.fontSize,
     },
     width: isCollapsed ? collapsedWidth : 'auto',
-    paddingLeft: theme.spacing(4),
+    paddingLeft: theme.spacing(5),
     transition: 'width 0.3s ease-in-out',
     cursor: 'pointer',
     paddingTop: 'unset'
