@@ -3,7 +3,8 @@ import MenuItem from '@mui/material/MenuItem';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { Column, OptionContainer, OptionIcon, StyledDrawer, StyledSearchField, StyledTextField } from './styles';
-import PracticeList from '../Practice';
+import PracticeList from './Practice';
+import { data } from '../../utils/data';
 
 const options = [
     {
@@ -15,7 +16,7 @@ const options = [
 
 const Drawer = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [data, setData] = useState([]);
+   /*  const [data, setData] = useState([]);
 
     const fetchData = async () => {
         try {
@@ -36,7 +37,7 @@ const Drawer = () => {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, []); */
 
     const renderOptions = () => {
         const filteredOptions = options.filter((option) =>
