@@ -1,19 +1,13 @@
 import { useState, useEffect } from 'react';
 import MenuItem from '@mui/material/MenuItem';
-import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { Column, OptionContainer, OptionIcon, StyledDrawer, StyledSearchField, StyledTextField } from './styles';
 import PracticeList from './Practice';
 import { data } from '../../utils/data';
+import { options } from '../../utils/options';
 // import fetchData from '../../utils/api';
 
-const options = [
-    {
-        value: 'Practice',
-        label: 'Practice',
-        icon: <RoomOutlinedIcon fontSize='18px' />,
-    },
-];
+
 
 const Drawer = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -30,11 +24,11 @@ const Drawer = () => {
 
 
     const renderOptions = () => {
-        const filteredOptions = options.filter((option) =>
+        const filteredOptions = options?.filter((option) =>
             option.label.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
-        return filteredOptions.map((option) => (
+        return filteredOptions?.map((option) => (
             <MenuItem key={option.value} value={option.value}>
                 <OptionContainer>
                     <OptionIcon>{option.icon}</OptionIcon>
