@@ -31,8 +31,7 @@ export const SidebarPaper = styled(Drawer)(({ theme, isCollapsed }) => ({
 export const SidebarList = styled(List)(({ theme, isCollapsed }) => ({
     padding: !isCollapsed
         ? `${theme.spacing(2)} ${theme.spacing(3)} ${theme.spacing(2)} ${theme.spacing(3)}`
-        : `${theme.spacing(3
-        )}`,
+        : '20px',
 }));
 
 export const SidebarListItem = styled(ListItem)(({ theme, isCollapsed }) => ({
