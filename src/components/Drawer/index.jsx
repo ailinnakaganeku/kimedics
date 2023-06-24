@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { Column, OptionContainer, OptionIcon, StyledDrawer, StyledSearchField, StyledTextField } from './styes';
 import PracticeList from '../Practice';
+import { data } from '../Practice/data';
 
 const options = [
     {
@@ -10,12 +12,17 @@ const options = [
         label: 'Practice',
         icon: <RoomOutlinedIcon fontSize='18px' />,
     },
-]
+];
 
 const Drawer = () => {
+    const [searchQuery, setSearchQuery] = useState('');
 
     const renderOptions = () => {
-        return options?.map((option) => (
+        const filteredOptions = options.filter((option) =>
+            option.label.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        return filteredOptions.map((option) => (
             <MenuItem key={option.value} value={option.value}>
                 <OptionContainer>
                     <OptionIcon>{option.icon}</OptionIcon>
@@ -45,10 +52,16 @@ const Drawer = () => {
                     InputProps={{
                         startAdornment: <SearchIcon color='secondary' />,
                     }}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                 />
             </Column>
             <Column>
-                <PracticeList />
+                <PracticeList
+                    data={data?.filter(({ name }) =>
+                        name.toLowerCase().includes(searchQuery.toLowerCase())
+                    )}
+                />
             </Column>
         </StyledDrawer>
     );

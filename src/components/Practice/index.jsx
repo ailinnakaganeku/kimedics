@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { data } from './data';
 import PracticeListItem from './Item';
 import { StyledCheckbox, ItemContainer, Text, JobsText } from './styles';
 
-const PracticeList = () => {
+const PracticeList = ({data}) => {
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleSelectAll = () => {
