@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { styled } from '@mui/system';
 import { ThemeProvider } from '@mui/material';
+import { theme } from './theme';
 import { sideBarItems } from './utils/mock';
 import Sidebar from './components/SideBar';
 import PageComponente from './pages/PageComponent';
-import { theme } from './theme';
 
 const AppContainer = styled('div')({
   display: 'flex',
