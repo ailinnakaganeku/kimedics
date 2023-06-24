@@ -37,3 +37,9 @@ export const TotalBedsText = styled('div')(({ theme }) => ({
   color: theme.palette.secondary.main,
   marginLeft: 'auto',
 }));
+
+export const JobsText = styled('div')(({ theme }) => ({
+  color: theme.palette.secondary.main,
+  marginLeft: 'auto',
+  fontWeight: 500
+}));

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { data } from './data';
 import PracticeListItem from './Item';
-import { StyledCheckbox, ItemContainer, Text } from './styles';
+import { StyledCheckbox, ItemContainer, Text, JobsText } from './styles';
 
 const PracticeList = () => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -31,6 +31,7 @@ const PracticeList = () => {
           onChange={handleSelectAll}
         />
         <Text>All</Text>
+        <JobsText>Jobs</JobsText>
       </ItemContainer>
       {data?.map(({ id, name, totalBeds }) => (
         <PracticeListItem
