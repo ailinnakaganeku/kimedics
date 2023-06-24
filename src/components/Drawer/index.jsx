@@ -7,20 +7,18 @@ import { data } from '../../utils/data';
 import { options } from '../../utils/options';
 // import fetchData from '../../utils/api';
 
-
-
 const Drawer = () => {
     const [searchQuery, setSearchQuery] = useState('');
-/*     const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchDataFromApi = async () => {
-            const responseData = await fetchData();
-            setData(responseData);
-        };
-
-        fetchDataFromApi();
-    }, []); */
+    /*     const [data, setData] = useState([]);
+    
+        useEffect(() => {
+            const fetchDataFromApi = async () => {
+                const responseData = await fetchData();
+                setData(responseData);
+            };
+    
+            fetchDataFromApi();
+        }, []); */
 
 
     const renderOptions = () => {
