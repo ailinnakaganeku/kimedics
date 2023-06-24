@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Column, OptionContainer, OptionIcon, StyledDrawer, StyledSearchField, StyledTextField } from './styles';
 import PracticeList from './Practice';
 import { data } from '../../utils/data';
+// import fetchData from '../../utils/api';
 
 const options = [
     {
@@ -16,28 +17,17 @@ const options = [
 
 const Drawer = () => {
     const [searchQuery, setSearchQuery] = useState('');
-   /*  const [data, setData] = useState([]);
-
-    const fetchData = async () => {
-        try {
-            const response = await fetch('https://s2ju1fj7u1.execute-api.us-east-2.amazonaws.com/Prod/api/practices', {
-                mode: 'no-cors',
-            });
-
-            if (!response.ok) {
-                throw new Error('Error fetching data');
-            }
-
-            const responseData = await response.json();
-            setData(responseData);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
+/*     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetchData();
+        const fetchDataFromApi = async () => {
+            const responseData = await fetchData();
+            setData(responseData);
+        };
+
+        fetchDataFromApi();
     }, []); */
+
 
     const renderOptions = () => {
         const filteredOptions = options.filter((option) =>

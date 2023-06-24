@@ -6,10 +6,10 @@ const PracticeList = ({data}) => {
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleSelectAll = () => {
-    if (selectedItems.length === data.length) {
+    if (selectedItems?.length === data?.length) {
       setSelectedItems([]);
     } else {
-      const allIds = data.map(({ id }) => id);
+      const allIds = data?.map(({ id }) => id);
       setSelectedItems(allIds);
     }
   };
@@ -26,7 +26,7 @@ const PracticeList = ({data}) => {
     <>
       <ItemContainer>
         <StyledCheckbox
-          checked={selectedItems.length === data.length}
+          checked={selectedItems?.length === data?.length}
           onChange={handleSelectAll}
         />
         <Text>All</Text>
