@@ -36,7 +36,7 @@ const Drawer = () => {
         <StyledDrawer>
             <Column>
                 <StyledTextField
-                    id='outlined-select-currency'
+                    id='outlined-select'
                     select
                     label='Display'
                     defaultValue='Practice'
