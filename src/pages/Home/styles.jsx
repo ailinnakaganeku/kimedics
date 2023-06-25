@@ -9,6 +9,9 @@ export const Container = styled(Box)`
   width: 100%;
 `;
 
-export const Logo = styled('img')`
-  width: 180px;
-`;
+export const Logo = styled('img')(({ theme }) => ({
+  visibility: 'visible',
+  [theme.breakpoints.down('sm')]: {
+    visibility: 'hidden'
+  },
+}));
